@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPIREBOUND — Duel of the Four Winds</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">✦ SPIREBOUND <span>Duel of the Four Winds</span></div>
+    <div class="topbar-help">Click a card to play it · Click a creature, then a target, to attack · Enter ends the turn</div>
+  </header>
+
+  <main id="table" aria-label="Spirebound card table"></main>
+
+  <aside id="log-panel">
+    <div class="log-title">Chronicle</div>
+    <div id="log"></div>
+  </aside>
+
+  <div id="title-screen" class="overlay">
+    <div class="panel title-panel">
+      <div class="eyebrow">A CARD DUEL OF THE FOUR WINDS</div>
+      <h1>SPIREBOUND</h1>
+      <p class="tagline">Four winds. One spire. Your move.</p>
+      <p class="blurb">Climb the spire and dethrone Zephyra, its Warden. Summon creatures of
+      Ember, Tide, Gale and Stone, chain same-wind creatures into Resonance,
+      and bring her life to zero before she brings yours.</p>
+      <div class="suit-legend">
+        <div class="legend-item suit-ember"><span class="legend-glyph">▲</span> Ember — burns fast, hits hard</div>
+        <div class="legend-item suit-tide"><span class="legend-glyph">●</span> Tide — endures, heals, outlasts</div>
+        <div class="legend-item suit-gale"><span class="legend-glyph">◆</span> Gale — swift, draws, races ahead</div>
+        <div class="legend-item suit-stone"><span class="legend-glyph">■</span> Stone — stands, quakes, crushes</div>
+      </div>
+      <div class="rules">
+        <div><b>Resonance</b> — a creature gains +1 attack and +1 health for each other friendly creature of the same wind.</div>
+        <div><b>Mana</b> — you gain one crystal a turn, up to 10. Unspent mana is lost.</div>
+        <div><b>Combat</b> — creatures strike back when attacked. New summons rest a turn.</div>
+      </div>
+      <button id="play-button" class="big-button">⚔ &nbsp;Enter the Spire</button>
+      <div class="footnote">Both duelists start at 30 life · Decks of 24 · Zephyra draws an extra card for going second · First to zero loses</div>
+    </div>
+  </div>
+
+  <div id="end-screen" class="overlay hidden">
+    <div class="panel end-panel">
+      <h1 id="end-heading">VICTORY</h1>
+      <p id="end-sub" class="tagline"></p>
+      <div id="end-stats"></div>
+      <button id="again-button" class="big-button">↻ &nbsp;Duel Again</button>
+    </div>
+  </div>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
